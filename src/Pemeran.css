@@ -1,0 +1,33 @@
+.pemeran {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .actor-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .actor-item {
+    width: 150px; /* Anda bisa menyesuaikan lebar sesuai kebutuhan */
+    text-align: center;
+  }
+  
+  .actor-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Sudut gambar yang melengkung */
+  }
+  
+  .actor-name {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+  

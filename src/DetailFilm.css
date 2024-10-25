@@ -1,0 +1,15 @@
+.trailer-container {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* Ubah ini sesuai kebutuhan untuk mengatur tinggi trailer */
+  overflow: hidden;
+}
+
+.trailer-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+

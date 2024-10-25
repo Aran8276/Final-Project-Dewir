@@ -1,0 +1,100 @@
+.header {
+  padding: 20px; /* Padding untuk seluruh header */
+}
+
+.trailer-container {
+  margin-bottom: 20px; /* Jarak di bawah trailer */
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 700px; /* Atur tinggi sesuai kebutuhan */
+  overflow: hidden;
+}
+
+.trailer-video {
+  width: 100%;
+  height: 100%;
+  border: none; /* Menghapus border dari iframe */
+}
+
+.search-bar-container {
+  margin: 20px 0; /* Jarak atas dan bawah untuk search bar */
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: nowrap; 
+  overflow-x: auto; 
+  gap: 16px; /* Jarak antar item */
+  padding: 10px; /* Padding di dalam container */
+  margin-top: 20px; /* Jarak atas untuk memisahkan dari konten sebelumnya */
+}
+
+.movie-item {
+  flex: 0 0 auto; /* Menghindari flex-grow dan flex-shrink */
+  width: 150px; /* Atur lebar setiap poster film */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Mengatur konten di tengah */
+  height: 350px; /* Atur tinggi kontainer untuk menjaga ukuran konsisten */
+}
+
+.movie-poster {
+  width: 100%; /* Lebar 100% dari kontainer */
+  height: 225px; /* Atur tinggi sesuai kebutuhan */
+  border-radius: 8px; /* Buat sudut poster bulat */
+  object-fit: cover; /* Memastikan gambar mengisi kontainer tanpa distorsi */
+}
+
+.movie-title-container {
+  overflow: hidden; /* Sembunyikan teks yang melampaui batas */
+  text-overflow: ellipsis; /* Tambahkan elipsis (...) di akhir teks yang terlalu panjang */
+  white-space: nowrap; /* Jangan biarkan teks membungkus ke baris berikutnya */
+  max-width: 150px; /* Atur lebar maksimum sesuai kebutuhan */
+}
+
+.genre-section {
+  margin-top: 30px; /* Jarak atas untuk bagian genre */
+  background-color: #001F3F; 
+  padding: 20px; 
+  border-radius: 5px; 
+  margin-top: 20px; 
+}
+
+.genre-buttons {
+  display: flex; /* Menyusun tombol genre dalam satu baris */
+  gap: 10px; /* Jarak antar tombol */
+  margin-top: 10px; /* Jarak atas untuk tombol genre */
+}
+
+.genre-buttons button {
+  background-color: #007bff; /* Warna tombol */
+  color: white; /* Warna teks */
+  border: none; /* Menghilangkan border */
+  padding: 10px 15px; /* Padding dalam tombol */
+  border-radius: 5px; /* Sudut tombol membulat */
+  cursor: pointer; /* Mengubah kursor menjadi pointer saat hover */
+  transition: background-color 0.3s; /* Transisi halus saat hover */
+}
+
+.genre-buttons button:hover {
+  background-color: #0056b3; /* Warna tombol saat hover */
+}
+
+.trailer-title-overlay {
+  position: absolute;
+  bottom: 20px; /* Jarak dari bawah */
+  left: 20px; /* Jarak dari kiri */
+  color: white; /* Warna teks */
+  padding: 10px; /* Padding */
+  border-radius: 5px; /* Sudut membulat */
+}
+
+.genre-movies-container {
+  background-color: #001F3F; /* Biru dongker */
+  padding: 20px; /* Tambahkan padding jika perlu */
+  border-radius: 10px; /* Opsional: untuk sudut yang membulat */
+}
+
