@@ -18,7 +18,7 @@ const Navbar = () => {
     }
   };
   return (
-    <div className="navbar bg-base-100 dark:bg-black fixed top-0 left-0 z-50 w-full shadow-lg">
+    <div className="navbar bg-base-100 dark:bg-black dark:text-white fixed top-0 left-0 z-50 w-full shadow-lg">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -42,7 +42,7 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             <li>
-              <Link to="/histori-rating">Rating</Link>
+              <Link to="/rating">Rating</Link>
             </li>
             <li>
               <summary>Film</summary>
@@ -67,16 +67,16 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link to="/histori-rating">Rating</Link>
+            <Link to="/rating">Rating</Link>
           </li>
           <li>
             <details>
               <summary>Film</summary>
               <ul className="p-2">
-                <li>
+                <li className="btn hover:bg-blue-500 dark:hover:bg-purple-600">
                   <Link to="/header">Movie</Link>
-                </li>
-                <li>
+                </li><br/>
+                <li className="btn hover:bg-blue-500 dark:hover:bg-purple-600">
                   <Link to="/Episode">Series</Link>
                 </li>
               </ul>
@@ -89,7 +89,6 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         <label className="swap swap-rotate">
-          {/* this hidden checkbox controls the state */}
           <input
             type="checkbox"
             className="theme-controller"

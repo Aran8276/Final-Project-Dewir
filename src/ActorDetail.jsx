@@ -7,7 +7,7 @@ const ActorDetail = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [showFullBio, setShowFullBio] = useState(false); // State untuk menampilkan biografi penuh
+  const [showFullBio, setShowFullBio] = useState(false);
   const apiKey = "95a4ed4dc8c4f7610f43e67fc4969ac0";
 
   useEffect(() => {
@@ -16,9 +16,9 @@ const ActorDetail = () => {
         const response = await fetch(`https://api.themoviedb.org/3/person/${id}?api_key=${apiKey}&language=en-US`);
         const data = await response.json();
         setActor(data);
-        setLoading(false);
       } catch (err) {
         setError("Gagal memuat data aktor: " + err.message);
+      } finally {
         setLoading(false);
       }
     };
@@ -52,10 +52,10 @@ const ActorDetail = () => {
           borderRadius: '15px'
         }} 
       />
-      <div style={{ textAlign: 'left', maxWidth: '900px' }}>
+      <div className="movie-title text-black dark:text-white" style={{ textAlign: 'left', maxWidth: '900px' }}>
         <h2 style={{ fontWeight: 'bold', fontSize: '2.5rem', marginBottom: '10px' }}>{actor.name}</h2>
         
-        {/* Info Pribadi di dalam tabel */}
+        {/* Personal Info in Table */}
         <h3 style={{ fontWeight: 'bold', fontSize: '1.5rem', marginBottom: '5px' }}>Info Pribadi</h3>
         <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '20px' }}>
           <tbody>
@@ -104,42 +104,46 @@ const ActorDetail = () => {
         </p>
 
         <h3 style={{ fontWeight: 'bold', fontSize: '1.5rem', marginTop: '20px' }}>Film yang Dimainkan</h3>
-        <div style={{ display: 'flex', overflowX: 'auto', gap: '10px' }}>
-          {movies.map((movie) => (
-            <div key={movie.id} style={{ flex: '0 0 auto', textAlign: 'center', position: 'relative' }}>
-              <Link to={`/detailfilm/${movie.id}`} style={{ textDecoration: 'none' }}>
-                <img
-                  src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : "https://via.placeholder.com/150"}
-                  alt={movie.title}
-                  style={{ width: '100px', height: 'auto', borderRadius: '8px' }}
-                />
-                {movie.vote_average > 0 && (
-                  <div style={{ 
-                    position: 'absolute', 
-                    top: '5px', 
-                    left: '5px', 
-                    backgroundColor: 'rgba(0, 31, 63, 0.7)', 
-                    color: 'white', 
-                    padding: '3px 5px', 
-                    borderRadius: '5px',
-                    fontSize: '0.8rem'
+        {movies.length > 0 ? (
+          <div style={{ display: 'flex', overflowX: 'auto', gap: '10px' }}>
+            {movies.map((movie) => (
+              <div key={movie.id} style={{ flex: '0 0 auto', textAlign: 'center', position: 'relative' }}>
+                <Link to={`/detailfilm/${movie.id}`} style={{ textDecoration: 'none' }}>
+                  <img
+                    src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : "https://via.placeholder.com/150"}
+                    alt={movie.title}
+                    style={{ width: '100px', height: 'auto', borderRadius: '8px' }}
+                  />
+                  {movie.vote_average > 0 && (
+                    <div style={{ 
+                      position: 'absolute', 
+                      top: '5px', 
+                      left: '5px', 
+                      backgroundColor: 'rgba(0, 31, 63, 0.7)', 
+                      color: 'white', 
+                      padding: '3px 5px', 
+                      borderRadius: '5px',
+                      fontSize: '0.8rem'
+                    }}>
+                      {movie.vote_average.toFixed(1)} ⭐
+                    </div>
+                  )}
+                  <span style={{ 
+                    display: 'block',
+                    maxWidth: '100px',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis'
                   }}>
-                    {movie.vote_average.toFixed(1)} ⭐
-                  </div>
-                )}
-                <span style={{ 
-                  display: 'block',
-                  maxWidth: '100px',
-                  whiteSpace: 'nowrap',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis'
-                }}>
-                  {movie.title} ({new Date(movie.release_date).getFullYear()})
-                </span>
-              </Link>
-            </div>
-          ))}
-        </div>
+                    {movie.title} ({new Date(movie.release_date).getFullYear()})
+                  </span>
+                </Link>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p>Tidak ada film yang ditemukan untuk aktor ini.</p>
+        )}
       </div>
     </div>
   );

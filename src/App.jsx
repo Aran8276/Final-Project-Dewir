@@ -8,10 +8,11 @@ import Pemeran from "./Pemeran";
 import ActorDetail from "./ActorDetail";
 import Episode from "./Episode";
 import DetailEpisode from "./DetailEpisode";
-import HistoriRating from "./HistoriRating";
 import Laman from "./Laman";
-import RateMovie from "./RateMovie";
 import ThemeContext from "./context/ThemeContext";
+import RatingView from "./RatingView";
+import Rating from "./Rating";
+
 
 function App() {
   const tema = useState("light");
@@ -27,9 +28,9 @@ function App() {
           <Route path="/detailepisode/:id" element={<DetailEpisode />} />
           <Route path="/tv/:id" element={<DetailEpisode />} />
           <Route path="/movie/:id" element={<DetailFilm />} />
-          <Route path="/histori-rating" element={<HistoriRating />} />
           <Route path="/actor/:id" element={<ActorDetail />} />
-          <Route path="/RateMovie" element={<RateMovie />} />
+          <Route path="/ratingview" element={<RatingView />} />
+          <Route path="/rating" element={<Rating />} />
         </Routes>
         <Footer />
       </ThemeContext.Provider>

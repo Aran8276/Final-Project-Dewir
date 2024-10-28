@@ -181,7 +181,7 @@ const Episode = () => {
         </div>
       </div>
 
-      <div className="search-bar-container">
+      <div className="search-bar-container text-black dark:text-white">
         <div className="search-bar">
           <input
             type="text"
@@ -192,7 +192,7 @@ const Episode = () => {
             onChange={handleSearchChange}
           />
           <button
-            className="btn btn-ghost btn-circle"
+            className="btn btn-ghost btn-circle "
             onClick={handleSearchSubmit}
           >
             <svg
@@ -214,7 +214,7 @@ const Episode = () => {
       </div>
 
       {/* Kontainer Film Populer */}
-      <div className="content-container">
+      <div className="content-container text-black dark:text-white">
         <h1 className="heading" style={{ fontWeight: "bold" }}>
           {debouncedQuery ? "Hasil Pencarian" : "Daftar Serial Populer"}
         </h1>
@@ -245,7 +245,7 @@ const Episode = () => {
                     </div>
                   )}
                 </div>
-                <h6 className="movie-title">{movie.name}</h6>
+                <h6 className="movie-title text-black dark:text-white">{movie.name}</h6>
               </div>
             ))
           ) : (

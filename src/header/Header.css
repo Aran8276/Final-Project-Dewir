@@ -1,5 +1,5 @@
 .trailer-container {
-  margin-bottom: 10px; /* Kurangi jarak bawah trailer */
+  margin-bottom: 10px;
 }
 
 .video-wrapper {
@@ -8,7 +8,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* Menghindari kontrol pada video */
+  pointer-events: none;
 }
 
 .trailer-video {
@@ -23,29 +23,27 @@
 
 .trailer-title-overlay {
   position: absolute;
-  top: 50%; /* Posisikan di tengah vertikal */
-  left: 20px; /* Jarak dari kiri */
-  transform: translateY(-50%); /* Menggeser setengah tinggi teks ke atas untuk tengah vertikal */
-  color: white; /* Warna teks */
-  font-size: 50px; /* Ukuran font */
+  top: 50%;
+  left: 20px; 
+  transform: translateY(-50%);
+  color: white; 
+  font-size: 50px; 
   background: transparent;
-  padding: 10px; /* Padding untuk keterbacaan */
-  border-radius: 5px; /* Sudut membulat */
-  pointer-events: none; /* Nonaktifkan interaksi */
-  font-weight: bold; /* Membuat teks menjadi bold */
+  padding: 10px;
+  border-radius: 5px; 
+  pointer-events: none; 
+  font-weight: bold;
 }
 
 .trailer-description {
-  font-size: 16px; /* Ukuran font deskripsi */
-  margin-top: 5px; /* Jarak antara judul dan deskripsi */
-  max-width: 280px; /* Maksimal lebar deskripsi */
-  display: -webkit-box; /* Menggunakan flexbox untuk multiline */
-  -webkit-box-orient: vertical; /* Mengatur orientasi kotak menjadi vertikal */
-  -webkit-line-clamp: 3; /* Membatasi menjadi 2 baris */
-  overflow: hidden; /* Menyembunyikan teks yang melebihi batas */
-  text-overflow: ellipsis; /* Menambahkan ellipsis (...) untuk teks yang terpotong */
-  color: white; /* Warna teks */
-  font-weight: normal;
+  font-size: 16px;
+  margin-top: 5px;
+  max-width: 400px;
+  display: block;
+  white-space: normal;
+  overflow: hidden;
+  color: #ffffff;
+  font-weight: 400;
 }
 
 .heading {
@@ -54,19 +52,19 @@
 
 .movie-list {
   display: flex;
-  flex-wrap: nowrap; /* Tidak membuat item jadi multiline */
-  overflow-x: auto; /* Mengaktifkan scroll horizontal jika item melebihi lebar container */
-  gap: 20px; /* Jarak antar-poster */
+  flex-wrap: nowrap;
+  overflow-x: auto; 
+  gap: 20px;
   padding: 10px;
   margin-top: 20px;
 }
 
 .movie-scroll {
-  display: inline-flex; /* Menggunakan flexbox untuk item film */
+  display: inline-flex; 
 }
 
 .movie-item {
-  min-width: 150px; /* Lebar tiap poster */
+  min-width: 150px;
   text-align: center;
 }
 
@@ -77,14 +75,14 @@
 }
 
 .movie-poster {
-  width: 150px; /* Ubah ukuran sesuai keinginan Anda */
-  height: 225px; /* Ubah ukuran sesuai keinginan Anda */
-  object-fit: cover; /* Menjaga rasio gambar */
+  width: 150px; 
+  height: 225px;
+  object-fit: cover; 
   border-radius: 8px;
 }
 
 .movie-poster:hover {
-  transform: scale(1.05); /* Membesarkan poster sedikit saat di-hover */
+  transform: scale(1.05); 
 }
 
 .movie-title-container {
@@ -102,45 +100,45 @@
 }
 
 .search-bar-container {
-  margin-top: 10px; /* Kurangi jarak atas search bar */
+  margin-top: 10px; 
   display: flex;
-  justify-content: center; /* Mencentralisir search bar */
+  justify-content: center; 
 }
 
 .search-bar {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50%; /* Atur lebar sesuai keinginan */
+  width: 50%; 
 }
 
 .search-input {
   flex: 1;
   padding: 6px;
   font-size: 14px;
-  border: 2px solid #ccc; /* Tambahkan border */
-  border-radius: 4px; /* Tambahkan border radius agar terlihat lebih rapi */
+  border: 2px solid #ccc; 
+  border-radius: 4px; 
 }
 
 .search-button {
   margin-left: 8px;
   padding: 6px 12px;
   font-size: 14px;
-  border: 2px solid #f0ad4e; /* Tambahkan border dengan warna sesuai tema */
-  border-radius: 4px; /* Tambahkan border radius */
-  background-color: #f0ad4e; /* Warna latar belakang sesuai class btn-warning */
+  border: 2px solid #f0ad4e; 
+  border-radius: 4px; 
+  background-color: #f0ad4e; 
   color: white;
   cursor: pointer;
 }
 
 .search-input:focus {
-  border-color: #007bff; /* Ubah warna border saat fokus pada input */
-  outline: none; /* Hapus outline default */
+  border-color: #007bff; 
+  outline: none;
 }
 
 .search-button:hover {
-  background-color: #ec971f; /* Ubah warna latar belakang saat hover */
-  border-color: #ec971f; /* Ubah warna border saat hover */
+  background-color: #ec971f; 
+  border-color: #ec971f; 
 }
 
 .genre-buttons {
@@ -152,7 +150,7 @@
 .btn-genre {
   margin: 5px;
   padding: 10px 15px;
-  background-color: #007bff; /* Warna tombol sesuai tema */
+  background-color: #007bff; 
   color: white;
   border: none;
   border-radius: 5px;
@@ -160,30 +158,30 @@
 }
 
 .btn-genre:hover {
-  background-color: #0056b3; /* Warna saat hover */
+  background-color: #0056b3;
 }
 
 .btn-genre.active {
-  background-color: #0056b3; /* Warna saat aktif */
-  border: 2px solid #004494; /* Tambahkan border saat aktif (opsional) */
+  background-color: #0056b3; 
+  border: 2px solid #004494; 
 }
 
 .genre-section {
-  background-color: #001f3f; /* Warna biru dongker */
-  color: white; /* Warna teks putih untuk kontras yang lebih baik */
-  padding: 20px; /* Tambahkan padding jika perlu */
-  border-radius: 8px; /* Sudut melengkung (opsional) */
+  background-color: #001f3f; 
+  color: white;
+  padding: 20px; 
+  border-radius: 8px;
 }
 
 .cast-container {
   display: flex;
-  align-items: center; /* Vertically center the image and text */
-  margin-bottom: 10px; /* Add some spacing between cast items */
+  align-items: center; 
+  margin-bottom: 10px; 
 }
 
 .cast-image {
-  width: 50px; /* Adjust width as needed */
-  height: auto; /* Maintain aspect ratio */
-  margin-right: 10px; /* Space between image and text */
-  border-radius: 50%; /* Optional: make image circular */
+  width: 50px;
+  height: auto; 
+  margin-right: 10px; 
+  border-radius: 50%; 
 }

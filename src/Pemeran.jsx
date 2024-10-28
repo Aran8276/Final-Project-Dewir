@@ -33,7 +33,7 @@ const Pemeran = () => {
   }, [totalPages, apiKey]);
 
   return (
-    <div className="pemeran">
+    <div className="movie-title text-black dark:text-white pemeran">
     <br/>
     <br/>
     <br/>

@@ -9,7 +9,7 @@ const Header = () => {
   const { movies, genres, loading, error, filteredMovies } = useSelector(
     (state) => state.movies
   );
-  const theme = useSelector((state) => state.theme.theme); // Ambil tema dari Redux
+  const theme = useSelector((state) => state.theme.theme);
 
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get("query") || "";
@@ -22,7 +22,7 @@ const Header = () => {
     url: "",
   });
 
-  const apiKey = "95a4ed4dc8c4f7610f43e67fc4969ac0"; // Gantilah dengan cara yang lebih aman di aplikasi nyata
+  const apiKey = "95a4ed4dc8c4f7610f43e67fc4969ac0";
 
   useEffect(() => {
     dispatch(fetchGenres());
@@ -89,7 +89,7 @@ const Header = () => {
   };
 
   return (
-    <div className={`header ${theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}>
+    <div className="movie-title text-black dark:text-white">
       <div className="trailer-container">
         {currentTrailer.url && (
           <div className="video-wrapper">
@@ -143,7 +143,7 @@ const Header = () => {
 
       <br />
 
-      <div>
+      <div className="movie-title text-black dark:text-white">
         <h1 className="heading" style={{ fontWeight: "bold" }}>
           {searchQuery ? "Hasil Pencarian" : "Daftar Film Populer"}
         </h1>
@@ -163,9 +163,9 @@ const Header = () => {
                     />
                   </Link>
                 </div>
-                <div className="movie-title-container">
+                <div className="movie-title-container text-black dark:text-white">
                   <Link to={`/movie/${movie.id}`}>
-                    <h6 className="movie-title">{movie.title}</h6>
+                    <h6 className="movie-title text-black dark:text-white">{movie.title}</h6>
                   </Link>
                 </div>
               </div>
